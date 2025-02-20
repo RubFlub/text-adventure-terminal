@@ -58,6 +58,10 @@ input {
     animation-fill-mode: forwards; /* makes sure the width doesn't reset to 0 */
 }
 
+.input-text {
+    color: var(--purple);
+}
+
 #terminal-main {
     margin: 15px 20px;
     border: var(--teal) solid 3px;

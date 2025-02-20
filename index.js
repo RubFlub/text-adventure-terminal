@@ -1,4 +1,7 @@
 const outputEl = document.getElementById("output");
+const inputEl = document.getElementById("input-field");
+
+let userInput = "";
 
 function print(text) {
     /* Print each element */
@@ -46,4 +49,33 @@ window.addEventListener('load', () => {
     ];
 
     print(text);
+});
+
+/**
+ * Assign an event listener to the input element to check for when enter is pressed.
+ */
+inputEl.addEventListener("keypress", (event) => {
+    if (event.key !== "Enter") {
+        return;
+    } 
+
+    /* Store the input from the user, then reset the input field. */
+    userInput = inputEl.value;
+    inputEl.value = "";
+
+    /* Print the command separately to avoid the typing animation. */
+    const pEl = document.createElement("p");
+    pEl.innerHTML = `<span id="input-name">user</span>@<span id="input-hostname">adventure</span>~$ <span class="input-text">${userInput}</span>`;
+    outputEl.appendChild(pEl);
+
+    // placeholder
+    print(
+        [
+            "<br>",
+            "example test",
+            "dwiuhdwuidhwqidhqidqid",
+            "abcdefghijklmnopqrstuvwxyz",
+            "<br>"
+        ]
+    );
 })
