@@ -29,11 +29,14 @@ pre {
 
 p {
     margin: 0px;
+    padding: 0px;
     font-family: "JetBrains Mono", serif;
     color: var(--gray);
+    line-height: 20px;
 }
 
 input {
+    display: inline-block;
     margin: 0px;
     padding: 0px;
     border: none;
@@ -43,7 +46,6 @@ input {
     outline: none;
     font-family: "JetBrains Mono", serif;
     font-size: inherit;
-    line-height: inherit;
     width: 70%;
 }
 

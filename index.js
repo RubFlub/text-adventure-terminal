@@ -68,6 +68,11 @@ inputEl.addEventListener("keypress", (event) => {
     pEl.innerHTML = `<span id="input-name">user</span>@<span id="input-hostname">adventure</span>~$ <span class="input-text">${userInput}</span>`;
     outputEl.appendChild(pEl);
 
+    /* If the input is blank, we can just end here. */
+    if (!userInput) {
+        return;
+    }
+
     // placeholder
     print(
         [
