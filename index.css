@@ -1,0 +1,100 @@
+@import url('https://fonts.googleapis.com/css2?family=Jersey+15&family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&display=swap');
+
+:root {
+    --teal: rgb(0, 120, 140);
+    --dark-teal: rgb(0, 16, 19);
+    --gray: rgb(109, 121, 133);
+    --orange: rgb(225, 124, 0);
+    --green: rgb(7, 140, 0);
+    --purple: rgb(218, 123, 245);
+}
+
+html, body {
+    background-color: var(--dark-teal);
+    height: 100%;
+    overflow: hidden;
+    margin: 0px;
+    font-size: 16px;
+    line-height: 16px;
+}
+
+pre {
+    margin: 0px;
+    padding: 0px;
+    color: var(--orange);
+    font-weight: bold;
+    font-size: 20px;
+    line-height: 20px;
+}
+
+p {
+    margin: 0px;
+    font-family: "JetBrains Mono", serif;
+    color: var(--gray);
+}
+
+input {
+    margin: 0px;
+    padding: 0px;
+    border: none;
+    background-color: var(--dark-teal);
+    color: var(--purple);
+    caret-color: var(--gray);
+    outline: none;
+    font-family: "JetBrains Mono", serif;
+    font-size: inherit;
+    line-height: inherit;
+    width: 70%;
+}
+
+/* class to add a typing effect to text */
+.typed {
+    overflow: hidden;
+    white-space: nowrap;
+    width: 0;
+    animation: type;
+    animation-duration: 2.5s;
+    animation-timing-function: steps(30, end); /* the animation takes 30 steps */
+    animation-fill-mode: forwards; /* makes sure the width doesn't reset to 0 */
+}
+
+#terminal-main {
+    margin: 15px 20px;
+    border: var(--teal) solid 3px;
+    border-radius: 3px;
+    box-sizing: border-box; /* include border & width in height */
+    height: calc(100% - 30px); /* subtract the top & bottom margin from height */
+}
+
+#terminal-bar {
+    height: 30px;
+    line-height: 30px;
+    background-color: var(--teal);
+    font-family: "Jersey 15", serif;
+    font-size: 24px;
+    vertical-align: center;
+    padding: 0px 5px;
+}
+
+#terminal-bar-gradient {
+    height: 10px;
+    background-image: linear-gradient(var(--teal), var(--dark-teal));
+}
+
+#terminal-text {
+    margin: 20px;
+}
+
+#input-name {
+    color: var(--teal);
+}
+
+#input-hostname {
+    color: var(--green)
+}
+
+/* keyframe rule to change width of element from 0% to 100% of the parent element width. */
+@keyframes type {
+    from { width: 0% }
+    to { width: 100% }
+}
