@@ -1,0 +1,1 @@
+export const aboutMessage = ["<br>", "placeholder text go brr", "<br>"];

@@ -1,7 +1,11 @@
+/**
+ * Commands.
+ */
+import { aboutMessage } from './commands/about.js';
+import { helpMessage } from './commands/help.js';
+
 const outputEl = document.getElementById("output");
 const inputEl = document.getElementById("input-field");
-
-let userInput = "";
 
 function print(text) {
     /* Print each element */
@@ -12,7 +16,6 @@ function print(text) {
             pEl.classList.add("typed");
             /* Set the inner content of the element to a line of text. */
             pEl.innerHTML = element;
-            console.log(pEl.innerHTML);
             /* The paragraph needs to be placed after the last line of text printed. */
             outputEl.appendChild(pEl);
         /**
@@ -22,6 +25,23 @@ function print(text) {
          */
         }, 50 * i);
     });
+}
+
+function handleInput(userInput) {
+    /* Split the input into the command, and any arguments. */
+    const args = userInput.trim().split('/ +/g').map((x) => x.toLowerCase());
+    const cmd = args[0];
+    switch(cmd) {
+        case '?':
+        case 'help':
+            print(helpMessage);
+            break;
+        case 'about':
+            print(aboutMessage);
+            break;
+        default:
+            print(['<br>', 'Could not find that command!', "Have you tried using <em>'help'</em> for a list of commands?", '<br>']);   
+    };
 }
 
 /**
@@ -43,9 +63,8 @@ window.addEventListener('load', () => {
         "<pre>┛┗  ┻┛  ┗┛  ┗┛  ┛┗   ┻   ┗┛  ┛┗  ┗┛</pre>",
         "<br>",
         "Welcome to Text Adventure!",
-        "dummy text",
-        "dummy text",
-        "<br>"
+        "Type <em>'help'</em> to see a list of commands.",
+        "<br>",
     ];
 
     print(text);
@@ -57,7 +76,9 @@ window.addEventListener('load', () => {
 inputEl.addEventListener("keypress", (event) => {
     if (event.key !== "Enter") {
         return;
-    } 
+    }
+
+    let userInput = "";
 
     /* Store the input from the user, then reset the input field. */
     userInput = inputEl.value;
@@ -73,14 +94,5 @@ inputEl.addEventListener("keypress", (event) => {
         return;
     }
 
-    // placeholder
-    print(
-        [
-            "<br>",
-            "example test",
-            "dwiuhdwuidhwqidhqidqid",
-            "abcdefghijklmnopqrstuvwxyz",
-            "<br>"
-        ]
-    );
+    handleInput(userInput);
 })

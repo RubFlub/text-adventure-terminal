@@ -2,6 +2,7 @@
 
 :root {
     --teal: rgb(0, 120, 140);
+    --light-teal: rgb(7, 185, 216);
     --dark-teal: rgb(0, 16, 19);
     --gray: rgb(109, 121, 133);
     --orange: rgb(225, 124, 0);
@@ -47,6 +48,12 @@ input {
     font-family: "JetBrains Mono", serif;
     font-size: inherit;
     width: 70%;
+}
+
+em {
+    font-style: normal;
+    color: var(--light-teal);
+    text-shadow: 0px 0px 5px var(--light-teal);
 }
 
 /* class to add a typing effect to text */
