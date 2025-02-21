@@ -4,6 +4,7 @@
 import { aboutMessage } from './commands/about.js';
 import { helpMessage } from './commands/help.js';
 
+const mainEl = document.getElementById("terminal-main");
 const outputEl = document.getElementById("output");
 const inputEl = document.getElementById("input-field");
 
@@ -18,6 +19,8 @@ function print(text) {
             pEl.innerHTML = element;
             /* The paragraph needs to be placed after the last line of text printed. */
             outputEl.appendChild(pEl);
+
+            mainEl.scrollTop = mainEl.scrollHeight;
         /**
          * The time has to be multiplied by the index to ensure that lines are printed in sequence,
          * not all at once.

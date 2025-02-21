@@ -77,6 +77,20 @@ em {
     border-radius: 3px;
     box-sizing: border-box; /* include border & width in height */
     height: calc(100% - 30px); /* subtract the top & bottom margin from height */
+    overflow: scroll;
+    scrollbar-width: none; /* remove scrollbar for firefox */
+    -ms-overflow-style: none; /* remove scrollbar for IE & edge */
+}
+
+/* remove the scroll bar on chrome, safari & opera */
+#terminal-main::-webkit-scrollbar {
+    display: none;
+}
+
+/* ensure that the top bar does not move when scrolling */
+#bar {
+    position: sticky;
+    top: 0;
 }
 
 #terminal-bar {
