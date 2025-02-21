@@ -68,7 +68,15 @@ window.addEventListener('load', () => {
     ];
 
     print(text);
-});
+})
+
+/**
+ * QOL to make the cursor go into the input field whenever anywhere on the page is clicked.
+ * Having to click the input itself is annoying, especially when its the same colour as the bg.
+ */
+window.addEventListener("click", () => {
+    inputEl.focus();
+})
 
 /**
  * Assign an event listener to the input element to check for when enter is pressed.
